@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625062916) do
+ActiveRecord::Schema.define(version: 20190221191718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 20160625062916) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "foods", force: :cascade do |t|
+    t.string  "name",          limit: 255
+    t.string  "price",         limit: 255
+    t.integer "restaurant_id"
+  end
+
+  create_table "foods_and_orders", force: :cascade do |t|
+    t.integer "food_id"
+    t.integer "order_id"
+    t.integer "qty"
+    t.string  "price",    limit: 255
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -34,6 +47,16 @@ ActiveRecord::Schema.define(version: 20160625062916) do
 
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id", using: :btree
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
+
+  create_table "migrations", force: :cascade do |t|
+    t.string   "name",           limit: 255
+    t.integer  "batch"
+    t.datetime "migration_time"
+  end
+
+  create_table "migrations_lock", id: false, force: :cascade do |t|
+    t.integer "is_locked"
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer  "total_cents"
@@ -56,6 +79,22 @@ ActiveRecord::Schema.define(version: 20160625062916) do
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name",         limit: 255
+    t.string "phone_number", limit: 255
+    t.string "address",      limit: 255
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_foreign_key "foods", "restaurants", name: "foods_restaurant_id_foreign"
+  add_foreign_key "foods_and_orders", "foods", name: "foods_and_orders_food_id_foreign"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "products", "categories"
