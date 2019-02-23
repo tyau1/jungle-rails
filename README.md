@@ -2,6 +2,12 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screenshots 
+
+!["Screenshot of a new Tweet"](https://github.com/tyau1/jungle-rails/blob/master/logged%20in.png?raw=true)
+!["Screenshot of a new Tweet"](hhttps://github.com/tyau1/jungle-rails/blob/master/order.png?raw=true)
+!["Screenshot of a new Tweet"](https://github.com/tyau1/jungle-rails/blob/master/review.png?raw=true)
+!["Screenshot of a new Tweet"](https://github.com/tyau1/jungle-rails/blob/master/cart.png?raw=true)
 
 ## Setup
 
