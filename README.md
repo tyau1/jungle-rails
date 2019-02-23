@@ -5,9 +5,10 @@ A mini e-commerce application built with Rails 4.2 for purposes of learning Rail
 ## Screenshots 
 
 !["Screenshot of logged in"](https://github.com/tyau1/jungle-rails/blob/master/logged%20in.png?raw=true)
-!["Screenshot of order page"](hhttps://github.com/tyau1/jungle-rails/blob/master/order.png?raw=true)
-!["Screenshot of reviews"](https://github.com/tyau1/jungle-rails/blob/master/review.png?raw=true)
 !["Screenshot of cart"](https://github.com/tyau1/jungle-rails/blob/master/cart.png?raw=true)
+!["Screenshot of reviews"](https://github.com/tyau1/jungle-rails/blob/master/review.png?raw=true)
+!["Screenshot of order page"](https://github.com/tyau1/jungle-rails/blob/master/order.png?raw=true)
+
 
 ## Setup
 
